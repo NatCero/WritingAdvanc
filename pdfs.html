@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+   
+
+    <title>Examples</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="assets/css/examplesstyles.css">
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/templatemo-eduwell-style.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
+    <link rel="stylesheet" href="assets/css/lightbox.css">
+<!--
+
+TemplateMo 573 EduWell
+
+https://templatemo.com/tm-573-eduwell
+
+-->
+  </head>
+
+<body>
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky">
+      <div class="container">
+          <div class="row">
+              <div class="col-12">
+                <nav class="main-nav">
+                  <!-- ***** Logo Start ***** -->
+                  <a href="index.html" class="logo">
+                    <div class="advance">
+                    <h4>Writing <spam  style="color: #ce89cd;">Advance</spam></h4>
+                    </div>
+                  </a>
+                  <!-- ***** Logo End ***** -->
+                  <!-- ***** Menu Start ***** -->
+                  <ul class="nav">
+                    <li><a href="about-us.html" class="active">Go back</a></li>
+                    <li><a href="#basic" class="active">Essay</a></li>
+                    <li><a href="#opinion">Opinion Essay</a></li>
+                    <li><a href="#email"> Email</a></li>
+                    <li><a href="#prosandcons">Pros and Cons Essay</a></li> 
+                  </ul>     
+                  <a class='menu-trigger'>
+                      <span>Menu</span>
+                  </a>
+                  <!-- ***** Menu End ***** -->
+                </nav>
+              </div>
+          </div>
+      </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+
+  <section class="page-heading">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="header-text">
+            <h1>Examples</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <br>
+  <br>
+         <div class="section-heading" id="basic">
+            <h6>Example</h6>
+            <h4>Basic <em>Essay</em></h4>
+          </div>
+          <br>
+          <br>
+          <div class="examples">
+          <iframe src="assets/basic essay.pdf"></iframe>
+          <br>
+          <br>
+          </div>
+          <br>
+          <br>
+          <div class="section-heading" id="opinion">
+            <h6>Example</h6>
+            <h4>Opinion <em>Essay</em></h4>
+          </div>
+          <br>
+          <br>
+          <div class="examples">
+          <iframe src="assets/opinion essay.pdf"></iframe>
+          <br>
+          <br>
+          </div>
+          <br>
+          <br>
+          <div class="section-heading" id="email">
+            <h6>Example</h6>
+            <h4>An <em>Email</em></h4>
+          </div>
+          <br>
+          <br>
+          <div class="examples">
+          <iframe src="assets/email.pdf"></iframe>
+          <br>
+          <br>
+          </div>
+          <br>
+          <br>
+         <div class="section-heading" id="prosandcons">
+            <h6>Example</h6>
+            <h4>Pros and Cons <em>Essay</em></h4>
+          </div>
+          <br>
+          <br>
+          <div class="examples">
+          <iframe src="assets/Pros and Cons Essay.pdf"></iframe>
+          </div>
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script src="assets/js/isotope.min.js"></script>
+    <script src="assets/js/owl-carousel.js"></script>
+    <script src="assets/js/lightbox.js"></script>
+    <script src="assets/js/tabs.js"></script>
+    <script src="assets/js/video.js"></script>
+    <script src="assets/js/slick-slider.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script>
+        //according to loftblog tut
+        $('.nav li:first').addClass('active');
+
+        var showSection = function showSection(section, isAnimate) {
+          var
+          direction = section.replace(/#/, ''),
+          reqSection = $('.section').filter('[data-section="' + direction + '"]'),
+          reqSectionPos = reqSection.offset().top - 0;
+
+          if (isAnimate) {
+            $('body, html').animate({
+              scrollTop: reqSectionPos },
+            800);
+          } else {
+            $('body, html').scrollTop(reqSectionPos);
+          }
+
+        };
+
+        var checkSection = function checkSection() {
+          $('.section').each(function () {
+            var
+            $this = $(this),
+            topEdge = $this.offset().top - 80,
+            bottomEdge = topEdge + $this.height(),
+            wScroll = $(window).scrollTop();
+            if (topEdge < wScroll && bottomEdge > wScroll) {
+              var
+              currentId = $this.data('section'),
+              reqLink = $('a').filter('[href*=\\#' + currentId + ']');
+              reqLink.closest('li').addClass('active').
+              siblings().removeClass('active');
+            }
+          });
+        };
+
+        $('.main-menu, .responsive-menu, .scroll-to-section').on('click', 'a', function (e) {
+          e.preventDefault();
+          showSection($(this).attr('href'), true);
+        });
+
+        $(window).scroll(function () {
+          checkSection();
+        });
+    </script>
+</body>
+
+</html>

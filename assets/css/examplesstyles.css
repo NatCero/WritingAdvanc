@@ -1,0 +1,15 @@
+.examples{
+    width: 1000px;
+    height: 800px;
+    display: block;
+    margin-left: 185px;
+}
+
+.examples iframe{
+    width: 1000px;
+    height: 800px;
+}
+
+.section-heading{
+    margin-left: 10px;
+}
